@@ -10,7 +10,7 @@ public class Main {
             System.out.print(", " + num);
 
         System.out.print("\nVetor ordenado: ");
-        bubbleSort(vetor);
+        insertionSort(vetor);
         for (Integer num : vetor)
             System.out.print(", " + num);
     }
@@ -24,6 +24,18 @@ public class Main {
                     vetor[j + 1] = temp;
                 }
             }
+        }
+    }
+
+    public static void insertionSort(Integer[] vetor){
+        for (int j = 1; j < vetor.length; j++){
+            int chave = vetor[j];
+            int i = j - 1;
+            while (i >= 0 && vetor[i] > chave){
+                vetor[i + 1] = vetor[i];
+                i--;
+            }
+            vetor[i + 1] = chave;
         }
     }
 }
